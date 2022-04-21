@@ -57,6 +57,7 @@ class MakerAppImage extends maker_base_1.default {
         // Build up the desktop meta and entry
         const desktopMeta = {
             Name: appName,
+            TryExec: executableName,
             Exec: `${executableName} %U`,
             Terminal: 'false',
             Type: 'Application',

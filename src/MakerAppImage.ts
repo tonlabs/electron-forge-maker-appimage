@@ -63,6 +63,7 @@ export default class MakerAppImage extends MakerBase<AppImageOptions> {
         // Build up the desktop meta and entry
         const desktopMeta: { [parameter: string]: string } = {
             Name: appName,
+            TryExec: executableName,
             Exec: `${executableName} %U`,
             Terminal: 'false',
             Type: 'Application',
