@@ -13,7 +13,12 @@ export default class MakerAppImage extends MakerBase<AppImageOptions> {
 
     async make(options: MakerOptions): Promise<string[]> {
         return buildForge(options, {
-            linux: [`appimage:${options.targetArch}`]
+            linux: [`appimage:${options.targetArch}`],
+            config: {
+                appImage: {
+                    publish: { provider: 'custom' }
+                }
+            }
         });
     }
 }
